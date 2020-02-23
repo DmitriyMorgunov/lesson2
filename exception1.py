@@ -11,10 +11,21 @@
 """
 
 def ask_user():
-    """
-    Замените pass на ваш код
-    """
-    pass
-    
+    questionsDictionaries = {"Как дела": "Хорошо!", "Что делаешь?": "Программирую", "Хороша ли погода?": "Хороша"}
+    answer = ''
+    questionText = "Задай вопрос: "
+    while True:
+        try:
+            questionFromUser = input(questionText)
+        except KeyboardInterrupt:
+            print('Пока!')
+            break
+        answer = questionsDictionaries.get(questionFromUser)
+        if answer is not None:
+            print(answer)
+            break
+        else:
+            questionText = "Не расслышал, что? "
+
 if __name__ == "__main__":
     ask_user()

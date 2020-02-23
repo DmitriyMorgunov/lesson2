@@ -15,12 +15,30 @@
 
 """
 
-def main():
-    """
-    Эта функция вызывается автоматически при запуске скрипта в консоли
-    В ней надо заменить pass на ваш код
-    """
-    pass
-    
+def main(str1, str2):
+    if type(str1) is str and type(str2) is str:
+        if str1 == str2:
+            return 1
+        elif str1 != str2 and len(str1) > len(str2):
+            return 2
+        elif str1 != str2 and str2 == 'learn':
+            return 3
+# По идее должна быть ветка-исключение.
+#        else:
+#            print('Исключительная ситуация')
+    else:
+        return 0
+
 if __name__ == "__main__":
-    main()
+    print(main(1, 'str'))
+    print(main('', ''))
+
+    print(main('learn', 'learn'))
+
+    print(main('learn', 'Python'))
+    print(main('Python', 'learn'))
+
+    print(main('learn', 'Python'))
+    
+    # Данный случай подходит и под второе и под третье условие (может вернуть как 2, так и 3). Похоже на некорректное ТЗ.
+    print(main('Python', 'learn'))
