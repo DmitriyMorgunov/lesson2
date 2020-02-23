@@ -13,11 +13,14 @@
 """
 
 def get_summ(num_one, num_two):
-    """
-    Замените pass на ваш код
-    """
-    pass
-    
+    try:
+        num_one_int = int(num_one)
+        num_two_int = int(num_two)
+        result = num_one_int + num_two_int
+    except ValueError:
+        result = 'В функцию переданы некорректные типы данных!'
+    return result
+
 if __name__ == "__main__":
     print(get_summ(2, 2))
     print(get_summ(3, "3"))
