@@ -19,11 +19,12 @@ def main(str1, str2):
     if type(str1) is str and type(str2) is str:
         if str1 == str2:
             return 1
-        elif str1 != str2 and len(str1) > len(str2):
+        # если предыдущее условие не выполнилось следовательно str1 и str2 не совпали, далее условия str1 != str2 избыточны
+        elif len(str1) > len(str2):
             return 2
-        elif str1 != str2 and str2 == 'learn':
+        elif str2 == 'learn':
             return 3
-# По идее должна быть ветка-исключение.
+# По идее должна быть ветка-исключение. - уйдет в последний else
 #        else:
 #            print('Исключительная ситуация')
     else:

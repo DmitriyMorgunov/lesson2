@@ -21,11 +21,13 @@ def ask_user():
     questionText = "Задай вопрос: "
     while True:
         questionFromUser = input(questionText)
-        answer = questionsDictionaries.get(questionFromUser)
-        if answer is not None:
-            print(answer)
-            break
-        else:
-            questionText = "Не расслышал, что? "
+        # можно сделать проще:
+        print(questionsDictionaries.get(questionFromUser, "Не расслышал, что?"))
+        # answer = questionsDictionaries.get(questionFromUser)
+        # if answer is not None:
+        #     print(answer)
+        #     break
+        # else:
+        #     questionText = "Не расслышал, что? "
 if __name__ == "__main__":
     ask_user()

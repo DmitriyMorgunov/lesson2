@@ -20,6 +20,7 @@ def ask_user():
         except KeyboardInterrupt:
             print('Пока!')
             break
+        # можно сократить также как показывала в примере с while
         answer = questionsDictionaries.get(questionFromUser)
         if answer is not None:
             print(answer)
